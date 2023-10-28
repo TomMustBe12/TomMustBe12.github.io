@@ -2167,6 +2167,61 @@
     </script> <!-- Card Thingy with "Replit" on it -->
 
         <script>
+          function allWillBeMoved() {
+            if(localStorage.getItem("allwillbemovedhasbeenshown")) {
+
+            } else {
+            const popup = document.createElement('div');
+  popup.classList.add("popupsMovingHere");
+
+  // Set the popup styles
+  popup.style.position = 'fixed';
+  popup.style.top = '50%';
+  popup.style.left = '50%';
+  popup.style.transform = 'translate(-50%, -50%)';
+  popup.style.width = '75%';
+  popup.style.height = '75%';
+  popup.style.overflow = 'auto';
+  popup.style.backgroundColor = '#fff';
+  popup.style.border = '1px solid #ccc';
+  popup.style.zIndex = '9999';
+  popup.style.transition = '1s';
+  popup.style.opacity = '0'; // Initial opacity set to 0
+
+  // Add content to the popup (e.g., close button)
+  popup.innerHTML = `
+    <button class="close-btn mixed-clouds-button-secondary" style="background-color: #4CAF50; /* Green */
+                border: none;
+                color: white;
+                padding: 10px 20px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+                border-radius: 4px;width:95.5%">Close Popup</button><div style="color:black;"><br><br><span style="text-align: center; justify-content: center; align-content: center;">` + textContent + `</div>`;
+
+  // Add event listener to close the popup
+  const closeBtn = popup.querySelector('.close-btn');
+  closeBtn.addEventListener('click', () => {
+    popup.style.opacity = '0'; // Set opacity to 0 for fade-out effect
+    setTimeout(() => {
+      popup.remove(); // Remove the popup after fade-out animation
+    }, 1000); // Adjust the duration as needed
+  });
+
+  // Append the popup to the document body
+  document.body.appendChild(popup);
+
+  // Trigger the fade-in effect
+  setTimeout(() => {
+    popup.style.opacity = '1'; // Set opacity to 1 for fade-in effect
+  }, 100); // Adjust the delay as needed
+  localStorage.setItem("allwillbemovedhasbeenshown", "hasbeenshownbutthiskeydoesntchangeathingifithasdifferentwordssoyeah")
+}
+            popup("All of TomMustBe12's projects from Replit and elsewhere are going to be moved here until further notice.", "projectsMovingHere");
+          }
           // Create a function to open the popup
 function viewVids() {
   // Create the popup element
@@ -2229,13 +2284,6 @@ function popup(textContent, id, noshow) {
   // Create the popup element
   const popup = document.createElement('div');
   popup.classList.add(id);
-  if(!localStorage.getItem('ls-popup_' + id + '_show')) {
-    localStorage.setItem('ls-popup_' + id + '_show', 'true')
-  } else {
-    if(localStorage.getItem('ls-popup_' + id + '_show' === 'false')) {
-      popup.remove();
-    }
-  }
 
   // Set the popup styles
   popup.style.position = 'fixed';
@@ -2271,9 +2319,6 @@ function popup(textContent, id, noshow) {
     popup.style.opacity = '0'; // Set opacity to 0 for fade-out effect
     setTimeout(() => {
       popup.remove(); // Remove the popup after fade-out animation
-      if(noshow === true) {
-        localStorage.setItem('ls-popup_' + id + '_show', 'false'); // set to false to not show again
-      }
     }, 1000); // Adjust the duration as needed
   });
 
@@ -2285,8 +2330,6 @@ function popup(textContent, id, noshow) {
     popup.style.opacity = '1'; // Set opacity to 1 for fade-in effect
   }, 100); // Adjust the delay as needed
 }
-
-popup("All of TomMustBe12's projects from Replit and elsewhere are going to be moved here until further notice.", "projectsMovingHere");
         </script>
   </body>
   
