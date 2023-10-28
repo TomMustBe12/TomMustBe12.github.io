@@ -2248,7 +2248,7 @@ function popup(textContent, id, noshow) {
   popup.style.backgroundColor = '#fff';
   popup.style.border = '1px solid #ccc';
   popup.style.zIndex = '9999';
-  popup.style.transition = '5s';
+  popup.style.transition = '1s';
   popup.style.opacity = '0'; // Initial opacity set to 0
 
   // Add content to the popup (e.g., close button)
@@ -2272,9 +2272,9 @@ function popup(textContent, id, noshow) {
     setTimeout(() => {
       popup.remove(); // Remove the popup after fade-out animation
       if(noshow === true) {
-        localStorage.setItem
+        localStorage.setItem('ls-popup_' + id + '_show', 'false'); // set to false to not show again
       }
-    }, 500); // Adjust the duration as needed
+    }, 1000); // Adjust the duration as needed
   });
 
   // Append the popup to the document body
