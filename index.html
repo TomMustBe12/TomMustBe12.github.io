@@ -2225,10 +2225,17 @@ function viewVids() {
   }, 100); // Adjust the delay as needed
 }
 
-function popup(textContent, id) {
+function popup(textContent, id, noshow) {
   // Create the popup element
   const popup = document.createElement('div');
   popup.classList.add(id);
+  if(!localStorage.getItem('ls-popup_' + id + '_show')) {
+    localStorage.setItem('ls-popup_' + id + '_show', 'true')
+  } else {
+    if(localStorage.getItem('ls-popup_' + id + '_show' === 'false')) {
+      // nothin'
+    }
+  }
 
   // Set the popup styles
   popup.style.position = 'fixed';
@@ -2241,6 +2248,7 @@ function popup(textContent, id) {
   popup.style.backgroundColor = '#fff';
   popup.style.border = '1px solid #ccc';
   popup.style.zIndex = '9999';
+  popup.style.transition = '5s';
   popup.style.opacity = '0'; // Initial opacity set to 0
 
   // Add content to the popup (e.g., close button)
@@ -2263,6 +2271,9 @@ function popup(textContent, id) {
     popup.style.opacity = '0'; // Set opacity to 0 for fade-out effect
     setTimeout(() => {
       popup.remove(); // Remove the popup after fade-out animation
+      if(noshow === true) {
+        localStorage.setItem
+      }
     }, 500); // Adjust the duration as needed
   });
 
