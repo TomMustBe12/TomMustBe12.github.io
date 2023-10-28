@@ -1594,9 +1594,11 @@
     <script>
       //Scrolling script (smooth scrolling phew)
       function scrollToElement(elementId) {
-  var targetElement = document.getElementById(elementId);
-  targetElement.scrollIntoView({ behavior: 'smooth' });
-}
+        var targetElement = document.getElementById(elementId);
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+      }
+
+      popup("All of TomMustBe12's projects from Replit and elsewhere are going to be moved here until further notice.", "projectsMovingHere");
     </script>
     <div class='flex-container' id='navbar'>
       <div class='flex-item nav-item' id='brand-name' onClick="location.replace('https://tommustbe12.com')">
@@ -1712,7 +1714,7 @@
             <br>
             <h1 id='ad-heading'>Replit</h1>
             <br><br>
-            <button id='ad-button' onclick="window.open('https://replit.com/@TomMustBe12')"">Go Now!</button>
+            <button id='ad-button' onclick="window.open('https://replit.com/@TomMustBe12')">Go Now!</button>
           </div>
         </div>
         <div class='padding-div'>
