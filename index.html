@@ -2233,7 +2233,7 @@ function popup(textContent, id, noshow) {
     localStorage.setItem('ls-popup_' + id + '_show', 'true')
   } else {
     if(localStorage.getItem('ls-popup_' + id + '_show' === 'false')) {
-      // nothin'
+      popup.remove();
     }
   }
 
