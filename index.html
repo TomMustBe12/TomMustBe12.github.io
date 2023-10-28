@@ -2200,7 +2200,7 @@
                 font-size: 16px;
                 margin: 4px 2px;
                 cursor: pointer;
-                border-radius: 4px;width:95.5%">Close Popup</button><div style="color:black;"><br><br><span style="text-align: center; justify-content: center; align-content: center;">` + textContent + `</div>`;
+                border-radius: 4px;width:95.5%">Close Popup</button><div style="color:black;"><br><br><span style="text-align: center; justify-content: center; align-content: center;"></div>`;
 
   // Add event listener to close the popup
   const closeBtn = popup.querySelector('.close-btn');
@@ -2220,7 +2220,6 @@
   }, 100); // Adjust the delay as needed
   localStorage.setItem("allwillbemovedhasbeenshown", "hasbeenshownbutthiskeydoesntchangeathingifithasdifferentwordssoyeah")
 }
-            popup("All of TomMustBe12's projects from Replit and elsewhere are going to be moved here until further notice.", "projectsMovingHere");
           }
           // Create a function to open the popup
 function viewVids() {
@@ -2280,7 +2279,7 @@ function viewVids() {
   }, 100); // Adjust the delay as needed
 }
 
-function popup(textContent, id, noshow) {
+function popup(textContent, id) {
   // Create the popup element
   const popup = document.createElement('div');
   popup.classList.add(id);
